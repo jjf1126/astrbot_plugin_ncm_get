@@ -1,9 +1,9 @@
 ``
-# AstrBot 插件：网易云音乐 (astrbot_plugin_netease_music)
+# AstrBot 插件：网易云音乐 (astrbot_plugin_netease_music_vip)
 
 ## 插件简介
 
-**astrbot_plugin_netease_music** 是一款为 AstrBot 打造的网易云音乐集成插件。该插件深度整合了网易云音乐的各项功能，允许用户在机器人端登录网易云账号，并通过指令或大语言模型的函数调用（Function Calling）功能，无缝获取歌曲详情、动态歌词以及热门评论。此外，插件还特别适配了 QQ 平台，支持在聊天中直接发送精美的结构化音乐卡片，极大丰富了群组与私聊的音乐互动体验。
+**astrbot_plugin_netease_music_vip** 是一款为 AstrBot 打造的网易云音乐集成插件。该插件深度整合了网易云音乐的各项功能，允许用户在机器人端登录网易云账号，并通过指令或大语言模型的函数调用（Function Calling）功能，无缝获取歌曲详情、动态歌词以及热门评论。此外，插件还特别适配了 QQ 平台，支持在聊天中直接发送精美的结构化音乐卡片，极大丰富了群组与私聊的音乐互动体验。
 
 ## 功能说明
 
