@@ -25,6 +25,22 @@ class NeteaseMusicPlugin(Star):
         self.data_dir = StarTools.get_data_dir()
         self.user_data_file = os.path.join(str(self.data_dir), "users.json")
         
+        # ====== 新增：伪造国内 IP 请求头 ======
+        if PYNCM_AVAILABLE:
+            import pyncm
+            # 获取当前的 pyncm HTTP 会话
+            session = pyncm.GetCurrentSession()
+            # 设置一个国内的 IP 地址（例如南京电信 DNS 114.114.114.114，或阿里云公共 DNS 223.5.5.5）
+            fake_ip = "114.114.114.114"
+            # 更新请求头
+            session.headers.update({
+                "X-Real-IP": fake_ip,
+                "X-Forwarded-For": fake_ip,
+                "client-ip": fake_ip
+            })
+            logger.info(f"已设置伪造国内 IP 请求头: {fake_ip}")
+        # ======================================
+        
         # 确保数据目录存在
         if not os.path.exists(self.data_dir):
             os.makedirs(self.data_dir, exist_ok=True)
