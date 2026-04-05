@@ -1,42 +1,30 @@
 {
-  "global_cookie": {
-    "description": "全局网易云音乐 Cookie 凭证",
-    "type": "text",
-    "hint": "用于机器人全局的网易云 API 请求。请填入包含 MUSIC_U 等字段的 Cookie 字符串。注意保护账号隐私，切勿将凭证泄露给他人。",
+  "cookie": {
+    "description": "网易云音乐 Cookie",
+    "type": "string",
+    "hint": "用于获取完整歌词或需要登录才能查看的歌曲信息。包含 MUSIC_U 等字段，可通过浏览器抓包获取。也可以通过 /ncm_cookie 指令动态设置。",
     "default": "",
-    "obvious_hint": true,
+    "obvious_hint": true
+  },
+  "auto_parse": {
+    "description": "自动解析链接",
+    "type": "bool",
+    "hint": "开启后，插件会自动监听并拦截消息中的网易云音乐链接（如 music.163.com）进行解析注入，无需手动调用指令。",
+    "default": true
+  },
+  "inject_format": {
+    "description": "上下文注入模板",
+    "type": "text",
+    "hint": "自定义注入给大模型的消息格式。可用变量：{title} 歌名, {artist} 歌手, {lyrics} 歌词。",
+    "default": "[系统附加信息] 用户分享了网易云音乐的歌曲《{title}》，歌手：{artist}。以下是完整歌词：\n{lyrics}\n\n请结合以上歌曲信息回复用户。",
     "editor_mode": true,
-    "editor_language": "text",
+    "editor_language": "plaintext",
     "editor_theme": "vs-light"
   },
-  "max_comments": {
-    "description": "获取热门评论的最大数量",
+  "request_timeout": {
+    "description": "请求超时时间 (秒)",
     "type": "int",
-    "hint": "限制每次请求返回的评论条数，避免单次消息过长导致发送失败或刷屏。",
-    "default": 5
-  },
-  "enable_function_calling": {
-    "description": "启用大模型函数调用 (Function Calling)",
-    "type": "bool",
-    "hint": "开启后，大语言模型可以自主调用网易云音乐相关工具获取歌曲信息、歌词和评论。",
-    "default": true
-  },
-  "fallback_to_text": {
-    "description": "音乐卡片发送失败时回退为纯文本",
-    "type": "bool",
-    "hint": "在不支持富媒体音乐卡片消息的平台（如非QQ平台），自动转换为发送歌曲链接和文本信息。",
-    "default": true
-  },
-  "allow_user_login": {
-    "description": "允许普通用户使用登录指令",
-    "type": "bool",
-    "hint": "开启后普通用户也可使用 /ncm_login 设置自己的独立凭证。关闭则仅限管理员操作，有助于统一管理和保护隐私。",
-    "default": false
-  },
-  "search_limit": {
-    "description": "默认搜索结果数量",
-    "type": "int",
-    "hint": "当用户通过关键词搜索歌曲时，返回的候选歌曲数量。",
-    "default": 3
+    "hint": "设置获取网页数据的超时时间，防止网络拥堵导致机器人响应缓慢。",
+    "default": 10
   }
 }

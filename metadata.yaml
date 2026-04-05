@@ -1,5 +1,5 @@
-name: astrbot_plugin_netease_music_vip
-author: Developer
-description: 网易云音乐插件。支持获取和设置用户网易云音乐账号登录状态，提供大模型函数工具（Function Calling）以通过账号获取歌曲信息（包括歌词、评论等），并支持在QQ回复中发送音乐卡片。
-version: 1.2.0
-repo: https://github.com/developer/astrbot_plugin_netease_music_vip
+name: astrbot_plugin_ncm_get
+author: AstrBot Developer
+description: 解析网易云音乐链接并获取歌曲信息（名字、完整歌词、歌手等），支持设置Cookie。获取的信息将自动注入消息上下文，辅助大语言模型生成回复。
+version: 1.0.0
+repo: https://github.com/yourusername/astrbot_plugin_ncm_get

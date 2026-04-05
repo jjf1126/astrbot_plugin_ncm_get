@@ -1,2 +1,2 @@
-httpx
-pyncm
+aiohttp
+beautifulsoup4
