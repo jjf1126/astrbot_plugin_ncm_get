@@ -2,4 +2,4 @@ name: astrbot_plugin_ncm_get
 author: AstrBot Developer
 description: 解析网易云音乐链接并获取歌曲信息（名字、完整歌词、歌手等），支持设置Cookie。获取的信息将自动注入消息上下文，辅助大语言模型生成回复。
 version: 1.0.0
-repo: https://github.com/yourusername/astrbot_plugin_ncm_get
+repo: https://github.com/jjf1126/astrbot_plugin_ncm_get
