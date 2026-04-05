@@ -6,17 +6,24 @@
     "default": "",
     "obvious_hint": true
   },
+  "qq_cookie": {
+    "description": "QQ音乐 Cookie",
+    "type": "string",
+    "hint": "用于获取QQ音乐的完整歌词或需要登录才能查看的歌曲信息。包含 qm_keyst、uin 等字段，可通过网页版QQ音乐抓包获取。也可以通过 /qq_cookie 指令动态设置。",
+    "default": "",
+    "obvious_hint": true
+  },
   "auto_parse": {
     "description": "自动解析链接",
     "type": "bool",
-    "hint": "开启后，插件会自动监听并拦截消息中的网易云音乐链接（如 music.163.com）进行解析注入，无需手动调用指令。",
+    "hint": "开启后，插件会自动监听并拦截消息中的网易云音乐或QQ音乐链接进行解析注入，无需手动调用指令。",
     "default": true
   },
   "inject_format": {
     "description": "上下文注入模板",
     "type": "text",
-    "hint": "自定义注入给大模型的消息格式。可用变量：{title} 歌名, {artist} 歌手, {lyrics} 歌词。",
-    "default": "[系统附加信息] 用户分享了网易云音乐的歌曲《{title}》，歌手：{artist}。以下是完整歌词：\n{lyrics}\n\n请结合以上歌曲信息回复用户。",
+    "hint": "自定义注入给大模型的消息格式。可用变量：{title} 歌名, {artist} 歌手, {lyrics} 歌词, {song_id} 歌曲ID, {iframe} 网页播放器代码。",
+    "default": "[系统附加信息] 用户分享了歌曲《{title}》，歌手：{artist}。以下是完整歌词：\n{lyrics}\n\n指令：请结合以上信息回复用户。为了保证后续聊天你能记住这首歌，请务必在你本次回复的开头，简要概括一下这首歌的核心主题或副歌关键歌词。",
     "editor_mode": true,
     "editor_language": "plaintext",
     "editor_theme": "vs-light"
